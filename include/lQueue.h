@@ -18,4 +18,13 @@ public:
 	T &front();
 };
 
+template<typename T>
+T Queue<T>::dequeue() { return this->remove(this->first()); }
+
+template<typename T>
+T &Queue<T>::front() { return this->first->data; }
+
+template<typename T>
+void Queue<T>::enqueue(T const &e) { this->insertAsLast(e); }
+
 #endif //DSA_LEARNING_LQUEUE_H

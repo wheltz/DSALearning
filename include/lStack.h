@@ -20,5 +20,19 @@ public:
 	T &top();
 };
 
+template<typename T>
+void Stack<T>::push(const T &e) {
+	this->insertAsLast(e);
+}
+
+template<typename T>
+T Stack<T>::pop() {
+	return this->remove(this->last());
+}
+
+template<typename T>
+T &Stack<T>::top() {
+	return this->last()->data;
+}
 
 #endif //DSA_LEARNING_LSTACK_H

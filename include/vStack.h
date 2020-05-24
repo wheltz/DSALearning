@@ -21,5 +21,19 @@ public:
 	T &top();
 };
 
+template<typename T>
+void Stack<T>::push(const T &e) {
+	this->insert(this->size(), e);   //入栈等效于新元素作为向量的末元素入栈
+}
+
+template<typename T>
+T Stack<T>::pop() {
+	return this->remove(this->size() - 1); //出栈等效于删除向量的末元素
+}
+
+template<typename T>
+T &Stack<T>::top() {
+	return (*this)[this->size() - 1];  //取顶：直接返回末元素
+}
 
 #endif //DSA_LEARNING_VSTACK_H
